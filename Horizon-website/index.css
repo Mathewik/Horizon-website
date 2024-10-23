@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&display=swap');
+
+body {
+    font-family: Arima;
+    background-color: rgb(88, 88, 88);
+    margin: 0; /* Usunięcie domyślnych marginesów */
+}
+
+.sidebar {
+    width: 30%; /* Maksymalna szerokość 30% */
+    max-width: 250px; /* Opcjonalnie, aby ograniczyć do 250px */
+    background-color: rgb(41, 41, 41);
+    color: white;
+    padding: 20px;
+    position: fixed;
+    height: 100%; /* Cała wysokość strony */
+    overflow-y: auto; /* Przewijanie w pionie, jeśli zawartość jest zbyt długa */
+    text-align: center;
+}
+
+.sidebar h1 {
+    color: orange;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+}
+
+.sidebar a:hover {
+    color: orange;
+}
+
+.logo {
+    width: 75%; /* Ustawia szerokość na 75% */
+    height: auto; /* Zachowuje proporcje obrazka */
+    display: block; /* Umożliwia centrowanie */
+    margin: 0 auto; /* Centruje obrazek */
+}
+
+.dropdown {
+    display: none;
+    margin-left: 20px; /* Dodatkowe wcięcie dla rozwijanej treści */
+}
+.dropdown-button {
+    cursor: pointer;
+}
+.dropdown-button:hover {
+    color: orange;
+}
+
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 99%;
+    background-color: rgb(41, 41, 41);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    clear: both;
+}
+
+footer p {
+    margin: 0;
+}

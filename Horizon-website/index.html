@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    
+    <title>Strona Główna</title>
+</head>
+<body>
+    <div class="sidebar">
+        <h1><a href="index.html"><img src="Grafiki/LOGO_WWW_BIAY_NAPIS.png" alt="Logo Horizon" class="logo"></a></h1>
+        <div class="dropdown-button" onclick="toggleDropdown()">O nas</div>
+        <div class="dropdown" id="about-dropdown">
+            <a href="#nasza-misja">Zespół</a>
+            <a href="#nasze-wartości">Regulamin</a>
+        </div>
+        <a href="#galeria">Galeria</a>
+        <a href="#kalendarz">Kalendarz</a>
+        <a href="#rekrutacja">Rekrutacja</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="index-logowanie.html">Panel logowania</a>
+    </div>
+
+        <div class="pictures">
+
+        </div>
+
+            <div class="main">
+                
+            </div>
+
+    <footer>
+    <p>&copy; 2023 Virtualna Firma Horizon. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("about-dropdown");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
