@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/index.css">
+
+    
+    <title>Strona Główna</title>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <a href="index.html"><img src="Grafiki/LOGO_WWW_BIAY_NAPIS.png" alt="logo"></a>
+    </div>
+    <ul>
+      <li>
+        <a href="#">O nas</a>
+      </li>
+      <li>
+        <a href="#">Galeria</a>
+      </li>
+      <li>
+        <a href="#">Kalendarz</a>
+      </li>
+      <li>
+        <a href="#">Rekrutacja</a>
+      </li>
+      <li>
+        <a href="kontakt.html">Kontakt</a>
+      </li>
+    </ul>
+    <div class="hamburger">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+  </nav>
+  <div class="menubar">
+    <ul>
+      <li>
+        <a href="#">O nas</a>
+      </li>
+      <li>
+        <a href="#">Galeria</a>
+      </li>
+      <li>
+        <a href="#">Kalendarz</a>
+      </li>
+      <li>
+        <a href="#">Rekrutacja</a>
+      </li>
+      <li>
+        <a href="#">Kontakt</a>
+      </li>
+    </ul>
+  </div>
+
+  <body>
+    <div class="container">
+        <div class="header">
+          <h1>Calendar</h1>
+        </div>
+        <div class="calendar">
+          <table>
+            <tr>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+              <th>Saturday</th>
+              <th>Sunday</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>9</td>
+              <td>10</td>
+              <td>11</td>
+              <td>12</td>
+              <td>13</td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+            </tr>
+            <tr>
+              <td>22</td>
+              <td>23</td>
+              <td>24</td>
+              <td>25</td>
+              <td>26</td>
+              <td>27</td>
+              <td>28</td>
+            </tr>
+            <tr>
+              <td>29</td>
+              <td>30</td>
+              <td>31</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+        <button class="button">Previous</button>
+        <button class="button">Next</button>
+      </div>
+    
+      <script>
+        let currentMonth = 0;
+        let currentYear = 2022;
+    
+        function getMonthDays(month, year) {
+          let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+          if (month === 1) {
+            if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+              daysInMonth[1] = 29;
+            }
+          }
+          return daysInMonth[month];
+        }
+    
+        function getMonthName(month) {
+          let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+          return monthNames[month];
+        }
+    
+        function renderCalendar() {
+          let calendarBody = document.querySelector(".calendar table tbody");
+          if (!calendarBody) {
+            calendarBody = document.createElement("tbody");
+            document.querySelector(".calendar table").appendChild(calendarBody);
+          } else {
+            calendarBody.innerHTML = "";
+          }
+    
+          let monthDays = getMonthDays(currentMonth, currentYear);
+          let monthName = getMonthName(currentMonth);
+    
+          document.querySelector(".header h1").textContent = `${monthName} ${currentYear}`;
+    
+          for (let i = 0; i < 6; i++) {
+            let weekRow = document.createElement("tr");
+            for (let j = 0; j < 7; j++) {
+              let dayCell = document.createElement("td");
+              let dayNumber = i * 7 + j + 1 - (new Date(currentYear, currentMonth, 1)).getDay();
+              if (dayNumber > 0 && dayNumber <= monthDays) {
+                dayCell.textContent = dayNumber;
+              }
+              weekRow.appendChild(dayCell);
+            }
+            calendarBody.appendChild(weekRow);
+          }
+        }
+    
+        document.addEventListener("DOMContentLoaded", renderCalendar);
+    
+        document.querySelectorAll(".button").forEach(button => {
+          button.addEventListener("click", () => {
+            if (button.textContent === "Previous") {
+              currentMonth--;
+              if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+              }
+            } else {
+              currentMonth++;
+              if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+              }
+            }
+            renderCalendar();
+          });
+        });
+      </script>
+</body>
+
+
+  <script src="Skrypty/skrypt.js"></script>
+
+    <footer>
+    <p>&copy; 2023 Virtualna Firma Horizon. Wszelkie prawa zastrzeżone.</p>
+    
+    </footer>
+
+
+</body>
+</html>

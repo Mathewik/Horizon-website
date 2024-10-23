@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&display=swap');
+
+body {
+    font-family: Arima;
+    background-color: rgb(88, 88, 88);
+    margin: 0; /* Usunięcie domyślnych marginesów */
+    display: flex; /* Umożliwienie użycia flexbox */
+}
+
+.sidebar {
+    max-width: 30% !important; /* Maksymalna szerokość 30% */
+    max-width: 250px; /* Opcjonalnie, aby ograniczyć do 250px */
+    background-color: rgb(41, 41, 41);
+    color: white;
+    padding: 20px;
+    position: fixed;
+    height: 100%; /* Cała wysokość strony */
+    overflow-y: auto; /* Przewijanie w pionie, jeśli zawartość jest zbyt długa */
+    text-align: center;
+    float: left;
+}
+
+.sidebar h1 {
+    color: orange;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+}
+
+.sidebar a:hover {
+    color: orange;
+}
+
+.logo {
+    width: 75%; /* Ustawia szerokość na 75% */
+    height: auto; /* Zachowuje proporcje obrazka */
+    display: block; /* Umożliwia centrowanie */
+    margin: 0 auto; /* Centruje obrazek */
+}
+
+.dropdown {
+    display: none;
+    margin-left: 20px; /* Dodatkowe wcięcie dla rozwijanej treści */
+}
+.dropdown-button {
+    cursor: pointer;
+}
+.dropdown-button:hover {
+    color: orange;
+}
+
+/*----------------------------------*/
+
+.pictures {
+    height: 250px;
+    width: 100%;
+   margin-left: 19.5%;
+    float: none; /* Usuń float, aby użyć flexbox */
+}
+.zdjecie {
+    width: 100%;
+    height: 100% !important; /* Możesz zmienić na 'height: 100%;' jeśli chcesz, aby zdjęcie wypełniło wysokość kontenera */
+    object-fit: cover; /* Dodaj to, aby zdjęcie wypełniło kontener */
+    opacity: 0.8;
+}
+
+/*--------------------------------*/
+
+.left{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+/*---------------------------------*/
+
+.right{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+/*----------------------------------*/
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 98.87%;
+    height: auto;
+    background-color: rgb(41, 41, 41);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    clear: both;
+}
+
+footer p {
+    margin: 0;
+}
